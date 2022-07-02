@@ -1,0 +1,13 @@
+C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\bin\Debug\Currency-Calculator.exe.config
+C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\bin\Debug\Currency-Calculator.exe
+C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\bin\Debug\Currency-Calculator.pdb
+C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency_Calculator.CurrencyCalculator.resources
+C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency_Calculator.Properties.Resources.resources
+C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency-Calculator.csproj.GenerateResource.cache
+C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency-Calculator.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency-Calculator.csproj.CopyComplete
+C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency-Calculator.exe
+C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency-Calculator.pdb
+C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency-Calculator.csproj.AssemblyReference.cache
