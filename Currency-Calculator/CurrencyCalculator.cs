@@ -121,7 +121,12 @@ namespace Currency_Calculator
             
            
         }
-
+        //привет
+        private void CurrencyCalculator_Load(object sender, EventArgs e)
+        {
+            ClientSize = new Size(571, 574);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+        }
     }
 }
 
