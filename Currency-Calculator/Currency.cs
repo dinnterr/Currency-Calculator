@@ -11,16 +11,16 @@ namespace Currency_Calculator
     public class Currency
     {
         [JsonProperty("ccy")]
-        public string CurrencyCode { get; set; }
+        public string Код { get; set; }
 
         [JsonProperty("base_ccy")]
-        public string NationalCurrencyCode { get; set; }
+        public string НацКод { get; set; }
 
         [JsonProperty("buy")]
-        public string Buy { get; set; }
+        public string Купівля { get; set; }
 
         [JsonProperty("sale")]
-        public string Sale { get; set; }
+        public string Продаж { get; set; }
     }
 
 }

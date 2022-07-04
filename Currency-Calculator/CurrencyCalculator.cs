@@ -39,11 +39,19 @@ namespace Currency_Calculator
 
             try
             {
+                NumberFormatInfo numberFormatInfo = new NumberFormatInfo()
+                {
+                    NumberDecimalSeparator = ".",
+
+                };
+
                 var httpResponseMessage = await httpClient.GetAsync(url);
                 string jsonResponse = await httpResponseMessage.Content.ReadAsStringAsync();
 
                 var currencies = JsonConvert.DeserializeObject<Currency[]>(jsonResponse);
                 eurBuy.DataSource = currencies;
+
+
             }
             catch (Exception ex)
             {
@@ -99,8 +107,8 @@ namespace Currency_Calculator
 
                 
                 //проба
-                currency = Convert.ToDouble(currencies[0].Buy, numberFormatInfo);
-                sum2.Text = Convert.ToString(sum * currency);
+                currency = Convert.ToDouble(currencies[0].Купівля, numberFormatInfo);
+                sum2.Text = Convert.ToString(sum*currency);
             }
             catch (Exception ex)
             {
@@ -114,7 +122,6 @@ namespace Currency_Calculator
            
         }
 
-       
     }
 }
 
