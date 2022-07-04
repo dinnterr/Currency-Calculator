@@ -129,7 +129,7 @@ namespace Currency_Calculator
             "USD",
             "EUR",
             "BTC"});
-            this.choose1.Location = new System.Drawing.Point(139, 332);
+            this.choose1.Location = new System.Drawing.Point(141, 332);
             this.choose1.Name = "choose1";
             this.choose1.Size = new System.Drawing.Size(92, 32);
             this.choose1.TabIndex = 18;
