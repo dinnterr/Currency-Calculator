@@ -34,18 +34,19 @@ namespace Currency_Calculator
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CurrencyCalculator));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.count = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.sum2 = new System.Windows.Forms.TextBox();
-            this.sum1 = new System.Windows.Forms.TextBox();
-            this.choose2 = new System.Windows.Forms.ComboBox();
-            this.choose = new System.Windows.Forms.Label();
             this.choose1 = new System.Windows.Forms.ComboBox();
+            this.choose2 = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.count = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.choose = new System.Windows.Forms.Label();
             this.eurBuy = new System.Windows.Forms.DataGridView();
             this.currencyHead = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.mainHeader = new System.Windows.Forms.Label();
+            this.sum1 = new System.Windows.Forms.TextBox();
+            this.sum2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eurBuy)).BeginInit();
@@ -54,124 +55,130 @@ namespace Currency_Calculator
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.count);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.sum2);
             this.panel1.Controls.Add(this.sum1);
-            this.panel1.Controls.Add(this.choose2);
-            this.panel1.Controls.Add(this.choose);
+            this.panel1.Controls.Add(this.count);
             this.panel1.Controls.Add(this.choose1);
+            this.panel1.Controls.Add(this.choose2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.choose);
             this.panel1.Controls.Add(this.eurBuy);
             this.panel1.Controls.Add(this.currencyHead);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(634, 461);
+            this.panel1.Size = new System.Drawing.Size(555, 535);
             this.panel1.TabIndex = 0;
-            // 
-            // count
-            // 
-            this.count.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.count.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.count.Location = new System.Drawing.Point(227, 383);
-            this.count.Name = "count";
-            this.count.Size = new System.Drawing.Size(155, 66);
-            this.count.TabIndex = 26;
-            this.count.Text = "Порахувати";
-            this.count.UseVisualStyleBackColor = true;
-            this.count.Click += new System.EventHandler(this.count_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.Image = global::Currency_Calculator.Properties.Resources.directions;
-            this.pictureBox1.Location = new System.Drawing.Point(293, 292);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 39);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
-            // 
-            // sum2
-            // 
-            this.sum2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.sum2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sum2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.sum2.Location = new System.Drawing.Point(320, 337);
-            this.sum2.Multiline = true;
-            this.sum2.Name = "sum2";
-            this.sum2.ReadOnly = true;
-            this.sum2.Size = new System.Drawing.Size(311, 40);
-            this.sum2.TabIndex = 24;
-            // 
-            // sum1
-            // 
-            this.sum1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.sum1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sum1.Location = new System.Drawing.Point(5, 337);
-            this.sum1.Multiline = true;
-            this.sum1.Name = "sum1";
-            this.sum1.Size = new System.Drawing.Size(309, 40);
-            this.sum1.TabIndex = 23;
-            this.sum1.Enter += new System.EventHandler(this.sum1_Enter);
-            this.sum1.Leave += new System.EventHandler(this.sum1_Leave);
-            // 
-            // choose2
-            // 
-            this.choose2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.choose2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.choose2.FormattingEnabled = true;
-            this.choose2.Items.AddRange(new object[] {
-            "UAH",
-            "USD",
-            "EUR",
-            "BTC"});
-            this.choose2.Location = new System.Drawing.Point(340, 292);
-            this.choose2.Name = "choose2";
-            this.choose2.Size = new System.Drawing.Size(92, 33);
-            this.choose2.TabIndex = 20;
-            // 
-            // choose
-            // 
-            this.choose.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.choose.AutoSize = true;
-            this.choose.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.choose.Location = new System.Drawing.Point(263, 264);
-            this.choose.Name = "choose";
-            this.choose.Size = new System.Drawing.Size(119, 25);
-            this.choose.TabIndex = 19;
-            this.choose.Text = "Конвертер";
             // 
             // choose1
             // 
             this.choose1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.choose1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.choose1.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.choose1.FormattingEnabled = true;
             this.choose1.Items.AddRange(new object[] {
             "UAH",
             "USD",
             "EUR",
             "BTC"});
-            this.choose1.Location = new System.Drawing.Point(195, 292);
+            this.choose1.Location = new System.Drawing.Point(139, 332);
             this.choose1.Name = "choose1";
-            this.choose1.Size = new System.Drawing.Size(92, 33);
+            this.choose1.Size = new System.Drawing.Size(92, 32);
             this.choose1.TabIndex = 18;
+            // 
+            // choose2
+            // 
+            this.choose2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.choose2.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.choose2.FormattingEnabled = true;
+            this.choose2.Items.AddRange(new object[] {
+            "UAH",
+            "USD",
+            "EUR",
+            "BTC"});
+            this.choose2.Location = new System.Drawing.Point(325, 332);
+            this.choose2.Name = "choose2";
+            this.choose2.Size = new System.Drawing.Size(92, 32);
+            this.choose2.TabIndex = 20;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.Image = global::Currency_Calculator.Properties.Resources.directions;
+            this.pictureBox1.Location = new System.Drawing.Point(265, 332);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            // 
+            // count
+            // 
+            this.count.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.count.BackColor = System.Drawing.Color.White;
+            this.count.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.count.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.count.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(209)))), ((int)(((byte)(109)))));
+            this.count.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(252)))), ((int)(((byte)(174)))));
+            this.count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.count.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.count.Location = new System.Drawing.Point(210, 459);
+            this.count.Name = "count";
+            this.count.Size = new System.Drawing.Size(147, 46);
+            this.count.TabIndex = 26;
+            this.count.Text = "Порахувати";
+            this.count.UseVisualStyleBackColor = false;
+            this.count.Click += new System.EventHandler(this.count_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ItemHeight = 20;
+            this.comboBox1.Items.AddRange(new object[] {
+            "НБУ",
+            "ПриватБанк"});
+            this.comboBox1.Location = new System.Drawing.Point(234, 37);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.TabIndex = 27;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(209)))), ((int)(((byte)(109)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(252)))), ((int)(((byte)(174)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(0, 182);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button1.Size = new System.Drawing.Size(634, 60);
+            this.button1.Size = new System.Drawing.Size(555, 60);
             this.button1.TabIndex = 17;
             this.button1.Text = "Отримати курс";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // choose
+            // 
+            this.choose.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.choose.AutoSize = true;
+            this.choose.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.choose.Location = new System.Drawing.Point(226, 288);
+            this.choose.Name = "choose";
+            this.choose.Size = new System.Drawing.Size(112, 24);
+            this.choose.TabIndex = 19;
+            this.choose.Text = "Конвертер";
             // 
             // eurBuy
             // 
@@ -207,7 +214,7 @@ namespace Currency_Calculator
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.eurBuy.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.eurBuy.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.eurBuy.Size = new System.Drawing.Size(634, 117);
+            this.eurBuy.Size = new System.Drawing.Size(555, 117);
             this.eurBuy.TabIndex = 16;
             this.eurBuy.Tag = "";
             // 
@@ -218,9 +225,9 @@ namespace Currency_Calculator
             this.currencyHead.Font = new System.Drawing.Font("Microsoft YaHei Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.currencyHead.Location = new System.Drawing.Point(0, 37);
             this.currencyHead.Name = "currencyHead";
-            this.currencyHead.Size = new System.Drawing.Size(370, 28);
+            this.currencyHead.Size = new System.Drawing.Size(237, 28);
             this.currencyHead.TabIndex = 1;
-            this.currencyHead.Text = "Актуальний курс валют (ПриватБанк)";
+            this.currencyHead.Text = "Актуальний курс валют";
             // 
             // panel2
             // 
@@ -229,30 +236,60 @@ namespace Currency_Calculator
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(634, 37);
+            this.panel2.Size = new System.Drawing.Size(555, 37);
             this.panel2.TabIndex = 0;
             // 
             // mainHeader
             // 
-            this.mainHeader.BackColor = System.Drawing.Color.Olive;
+            this.mainHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(115)))), ((int)(((byte)(37)))));
             this.mainHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainHeader.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.mainHeader.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.mainHeader.Location = new System.Drawing.Point(0, 0);
             this.mainHeader.Name = "mainHeader";
-            this.mainHeader.Size = new System.Drawing.Size(634, 37);
+            this.mainHeader.Size = new System.Drawing.Size(555, 37);
             this.mainHeader.TabIndex = 0;
             this.mainHeader.Text = "Калькулятор валют";
             this.mainHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sum1
+            // 
+            this.sum1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.sum1.Font = new System.Drawing.Font("Microsoft PhagsPa", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sum1.Location = new System.Drawing.Point(53, 379);
+            this.sum1.MaximumSize = new System.Drawing.Size(250, 90);
+            this.sum1.Multiline = true;
+            this.sum1.Name = "sum1";
+            this.sum1.Size = new System.Drawing.Size(205, 58);
+            this.sum1.TabIndex = 23;
+            this.sum1.Enter += new System.EventHandler(this.sum1_Enter);
+            this.sum1.Leave += new System.EventHandler(this.sum1_Leave);
+            // 
+            // sum2
+            // 
+            this.sum2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.sum2.BackColor = System.Drawing.Color.White;
+            this.sum2.Font = new System.Drawing.Font("Microsoft PhagsPa", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sum2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.sum2.Location = new System.Drawing.Point(306, 379);
+            this.sum2.MaximumSize = new System.Drawing.Size(250, 90);
+            this.sum2.Multiline = true;
+            this.sum2.Name = "sum2";
+            this.sum2.ReadOnly = true;
+            this.sum2.Size = new System.Drawing.Size(205, 58);
+            this.sum2.TabIndex = 24;
             // 
             // CurrencyCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 461);
+            this.ClientSize = new System.Drawing.Size(555, 535);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(571, 574);
             this.Name = "CurrencyCalculator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CurrencyCalculator";
+            this.Load += new System.EventHandler(this.CurrencyCalculator_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -277,5 +314,6 @@ namespace Currency_Calculator
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button count;
         private System.Windows.Forms.Label mainHeader;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

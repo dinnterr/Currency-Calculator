@@ -11,3 +11,16 @@ C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Cur
 C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency-Calculator.exe
 C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency-Calculator.pdb
 C:\Users\User\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency-Calculator.csproj.AssemblyReference.cache
+C:\Users\ONIX\source\repos\Currency-Calculator\Currency-Calculator\bin\Debug\Currency-Calculator.exe.config
+C:\Users\ONIX\source\repos\Currency-Calculator\Currency-Calculator\bin\Debug\Currency-Calculator.exe
+C:\Users\ONIX\source\repos\Currency-Calculator\Currency-Calculator\bin\Debug\Currency-Calculator.pdb
+C:\Users\ONIX\source\repos\Currency-Calculator\Currency-Calculator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ONIX\source\repos\Currency-Calculator\Currency-Calculator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ONIX\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency-Calculator.csproj.AssemblyReference.cache
+C:\Users\ONIX\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency_Calculator.CurrencyCalculator.resources
+C:\Users\ONIX\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency_Calculator.Properties.Resources.resources
+C:\Users\ONIX\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency-Calculator.csproj.GenerateResource.cache
+C:\Users\ONIX\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency-Calculator.csproj.CoreCompileInputs.cache
+C:\Users\ONIX\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency-Calculator.csproj.CopyComplete
+C:\Users\ONIX\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency-Calculator.exe
+C:\Users\ONIX\source\repos\Currency-Calculator\Currency-Calculator\obj\Debug\Currency-Calculator.pdb
