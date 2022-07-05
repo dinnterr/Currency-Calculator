@@ -57,6 +57,7 @@
     <Compile Include="CurrencyCalculator.Designer.cs">
       <DependentUpon>CurrencyCalculator.cs</DependentUpon>
     </Compile>
+    <Compile Include="CurrencyNBU.cs" />
     <Compile Include="Money.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

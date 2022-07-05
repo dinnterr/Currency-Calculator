@@ -1,17 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Net;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
 using System.Windows.Forms;
 
 namespace Currency_Calculator
@@ -25,35 +17,42 @@ namespace Currency_Calculator
 
             sum1.Text = "Введіть суму (в форматі 0.00)";
             sum1.ForeColor = Color.Gray;
-            sum2.Text = "0.00";
-            sum2.ForeColor = Color.Black;
             sum3.Text = "0.00";
             sum3.ForeColor = Color.Black;
+            sum2.Text = "0.00";
+            sum2.ForeColor = Color.Black;
         }
-
-
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            string url = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
-
-            HttpClient httpClient = new HttpClient();
+            HttpClient client = new HttpClient();
 
             try
             {
                 NumberFormatInfo numberFormatInfo = new NumberFormatInfo()
                 {
                     NumberDecimalSeparator = ".",
-
                 };
-
-                var httpResponseMessage = await httpClient.GetAsync(url);
-                string jsonResponse = await httpResponseMessage.Content.ReadAsStringAsync();
-
-                var currencies = JsonConvert.DeserializeObject<Currency[]>(jsonResponse);
-                eurBuy.DataSource = currencies;
-
-
+                switch (bank.Text)
+                {
+                    case "НБУ":
+                        {
+                            string responce = await client.GetStringAsync("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json");
+                            List<CurrencyNBU> currenciesNBU = JsonConvert.DeserializeObject<List<CurrencyNBU>>(responce);
+                            eurBuy.DataSource = currenciesNBU;
+                            break;
+                        }
+                    case "ПриватБанк":
+                        {
+                            string responce = await client.GetStringAsync("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5");
+                            List<Currency> currencies = JsonConvert.DeserializeObject<List<Currency>>(responce);
+                            eurBuy.DataSource = currencies;
+                            break;
+                        }
+                    case "":
+                        throw new Exception("Оберіть банк.");
+                }
+                
             }
             catch (Exception ex)
             {
@@ -61,7 +60,7 @@ namespace Currency_Calculator
             }
             finally
             {
-                httpClient.Dispose();
+                client.Dispose();
             }
         }
 
@@ -88,8 +87,11 @@ namespace Currency_Calculator
             const int USD = 0;
             const int EUR = 1;
             const int BTC = 2;
+            const int USDnbu = 25;
+            const int EURnbu = 33;
 
-            HttpClient client = new HttpClient();
+            HttpClient client1 = new HttpClient();
+            HttpClient client2 = new HttpClient();
             try
             {
                 NumberFormatInfo numberFormatInfo = new NumberFormatInfo()
@@ -97,10 +99,13 @@ namespace Currency_Calculator
                     NumberDecimalSeparator = ".",
                 };
 
-                string responce = await client.GetStringAsync("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5");
-                List<Currency> currencies = JsonConvert.DeserializeObject<List<Currency>>(responce);
-                
-                double sum = Convert.ToDouble(sum1.Text);
+                string responce1 = await client1.GetStringAsync("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5");
+                List<Currency> currencies = JsonConvert.DeserializeObject<List<Currency>>(responce1);
+
+                string responce2 = await client2.GetStringAsync("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json");
+                List<CurrencyNBU> currenciesNBU = JsonConvert.DeserializeObject<List<CurrencyNBU>>(responce2);
+
+                double sum = Convert.ToDouble(sum1.Text, numberFormatInfo);
 
                 if(sum < 0)
                 {
@@ -109,8 +114,8 @@ namespace Currency_Calculator
 
                 if (choose1.Text != "" && choose2.Text != "")
                 {
-                    string currency1 = choose1.Text;
-                    string currency2 = choose2.Text;
+                    string currency01 = choose1.Text;
+                    string currency02 = choose2.Text;
                     double usd = Convert.ToDouble(currencies[USD].Купівля, numberFormatInfo);
                     double uah = 1;
                     double eur = Convert.ToDouble(currencies[EUR].Купівля, numberFormatInfo);
@@ -119,10 +124,26 @@ namespace Currency_Calculator
                     double eurSale = Convert.ToDouble(currencies[EUR].Продаж, numberFormatInfo);
                     double btcSale = Convert.ToDouble(currencies[BTC].Продаж, numberFormatInfo);
 
-                    Money money = new Money(currency1, currency2, sum, usd, uah, eur, btc, usdSale, eurSale, btcSale);
+                    string currency11 = choose1.Text;
+                    string currency12 = choose2.Text;
+                    double usd2 = Convert.ToDouble(currenciesNBU[USDnbu].Курс, numberFormatInfo);
+                    double eur2 = Convert.ToDouble(currenciesNBU[EURnbu].Курс, numberFormatInfo);
+                    double usdSale2 = Convert.ToDouble(currenciesNBU[USDnbu].Курс, numberFormatInfo);
+                    double eurSale2 = Convert.ToDouble(currenciesNBU[EURnbu].Курс, numberFormatInfo);
 
-                    double result = money.Transfer();
-                    sum2.Text = Convert.ToString(result);
+                    //НБУ
+                    Money money2 = new Money(currency11, currency12, sum, usd2, uah, eur2, 0, usdSale2, eurSale2, 0);
+                    double result2 = money2.Transfer();
+                    sum2.Text = Convert.ToString(Math.Round(result2, 2));
+                    if (choose1.Text == "BTC" || choose2.Text == "BTC")
+                    {
+                        sum2.Text = "Немає даних";
+                    }
+
+                    //ПриватБанк
+                    Money money1 = new Money(currency01, currency02, sum, usd, uah, eur, btc, usdSale, eurSale, btcSale);
+                    double result1 = money1.Transfer();
+                    sum3.Text = Convert.ToString(Math.Round(result1, 2));  
                 }
                 else
                     throw new Exception("Оберіть валюти для конвертації.");
@@ -133,7 +154,8 @@ namespace Currency_Calculator
             }
             finally
             {
-                client.Dispose();
+                client1.Dispose();
+                client2.Dispose();
             }  
         }
         
@@ -143,7 +165,12 @@ namespace Currency_Calculator
             FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
-     
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string first = choose1.Text;
+            choose1.Text = choose2.Text;
+            choose2.Text = first;
+        }
     }
 }
 

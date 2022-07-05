@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Currency_Calculator
 {
     class Money
@@ -41,11 +36,15 @@ namespace Currency_Calculator
             }
             else if (currency == "USD" && currency1 == "EUR")
             {
-                actualCurrency = usdSale / eurSale;
+                actualCurrency = usd / eurSale;
             }
-            else if (currency == "USD" && currency1 == "BIT")
+            else if (currency == "USD" && currency1 == "BTC")
             {
-                actualCurrency = usdSale / btcSale;
+                actualCurrency = 1 / btcSale;
+            }
+            else if (currency == "USD" && currency1 == "USD")
+            {
+                actualCurrency = 1;
             }
             else if (currency == "UAH" && currency1 == "USD")
             {
@@ -55,11 +54,15 @@ namespace Currency_Calculator
             {
                 actualCurrency = uah / eurSale;
             }
-            else if (currency == "UAH" && currency1 == "BIT")
+            else if (currency == "UAH" && currency1 == "BTC")
             {
                 double dollar;
                 dollar = uah / usdSale;
                 actualCurrency = dollar / btcSale;
+            }
+            else if (currency == "UAH" && currency1 == "UAH")
+            {
+                actualCurrency = 1;
             }
             else if (currency == "EUR" && currency1 == "UAH")
             {
@@ -67,29 +70,35 @@ namespace Currency_Calculator
             }
             else if (currency == "EUR" && currency1 == "USD")
             {
-                actualCurrency = eur / usd;
+                actualCurrency = eur / usdSale;
             }
-            else if (currency == "EUR" && currency1 == "BIT")
+            else if (currency == "EUR" && currency1 == "BTC")
             {
                 double dollar;
-                dollar = eur / usd;
+                dollar = eur / usdSale;
                 actualCurrency = dollar / btcSale;
             }
-            else if (currency == "BIT" && currency1 == "USD")
+            else if (currency == "EUR" && currency1 == "EUR")
+            {
+                actualCurrency = 1;
+            }
+            else if (currency == "BTC" && currency1 == "USD")
             {
                 actualCurrency = btc;
             }
-            else if (currency == "BIT" && currency1 == "EUR")
+            else if (currency == "BTC" && currency1 == "EUR")
             {
                 double dollar;
                 dollar = eur / usd;
                 actualCurrency = btc / dollar;
             }
-            else if (currency == "BIT" && currency1 == "UAH")
+            else if (currency == "BTC" && currency1 == "UAH")
             {
-                double dollar;
-                dollar = uah / usd;
-                actualCurrency = dollar / btc;
+                actualCurrency = usd * btc;
+            }
+            else if (currency == "BTC" && currency1 == "BTC")
+            {
+                actualCurrency = 1;
             }
 
             double result = sum * actualCurrency;
