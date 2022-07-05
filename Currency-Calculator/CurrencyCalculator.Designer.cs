@@ -34,6 +34,9 @@ namespace Currency_Calculator
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CurrencyCalculator));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.sum3 = new System.Windows.Forms.TextBox();
             this.sum2 = new System.Windows.Forms.TextBox();
             this.sum1 = new System.Windows.Forms.TextBox();
             this.count = new System.Windows.Forms.Button();
@@ -56,6 +59,9 @@ namespace Currency_Calculator
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.sum3);
             this.panel1.Controls.Add(this.sum2);
             this.panel1.Controls.Add(this.sum1);
             this.panel1.Controls.Add(this.count);
@@ -74,30 +80,69 @@ namespace Currency_Calculator
             this.panel1.Size = new System.Drawing.Size(555, 535);
             this.panel1.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(297, 438);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(225, 24);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "за курсом ПриватБанку:";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(297, 350);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 24);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "за курсом НБУ:";
+            // 
+            // sum3
+            // 
+            this.sum3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.sum3.BackColor = System.Drawing.Color.White;
+            this.sum3.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sum3.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.sum3.Location = new System.Drawing.Point(296, 377);
+            this.sum3.MaximumSize = new System.Drawing.Size(250, 90);
+            this.sum3.Multiline = true;
+            this.sum3.Name = "sum3";
+            this.sum3.ReadOnly = true;
+            this.sum3.Size = new System.Drawing.Size(247, 58);
+            this.sum3.TabIndex = 28;
+            this.sum3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // sum2
             // 
             this.sum2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.sum2.BackColor = System.Drawing.Color.White;
-            this.sum2.Font = new System.Drawing.Font("Microsoft PhagsPa", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sum2.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sum2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.sum2.Location = new System.Drawing.Point(307, 379);
+            this.sum2.Location = new System.Drawing.Point(296, 465);
             this.sum2.MaximumSize = new System.Drawing.Size(250, 90);
             this.sum2.Multiline = true;
             this.sum2.Name = "sum2";
             this.sum2.ReadOnly = true;
-            this.sum2.Size = new System.Drawing.Size(205, 58);
+            this.sum2.Size = new System.Drawing.Size(247, 58);
             this.sum2.TabIndex = 24;
+            this.sum2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // sum1
             // 
             this.sum1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.sum1.Font = new System.Drawing.Font("Microsoft PhagsPa", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sum1.Location = new System.Drawing.Point(54, 379);
+            this.sum1.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sum1.Location = new System.Drawing.Point(12, 377);
             this.sum1.MaximumSize = new System.Drawing.Size(250, 90);
             this.sum1.Multiline = true;
             this.sum1.Name = "sum1";
-            this.sum1.Size = new System.Drawing.Size(205, 58);
+            this.sum1.Size = new System.Drawing.Size(250, 67);
             this.sum1.TabIndex = 23;
+            this.sum1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.sum1.Enter += new System.EventHandler(this.sum1_Enter);
             this.sum1.Leave += new System.EventHandler(this.sum1_Leave);
             // 
@@ -110,10 +155,10 @@ namespace Currency_Calculator
             this.count.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(209)))), ((int)(((byte)(109)))));
             this.count.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(252)))), ((int)(((byte)(174)))));
             this.count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.count.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.count.Location = new System.Drawing.Point(210, 459);
+            this.count.Font = new System.Drawing.Font("Microsoft PhagsPa", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.count.Location = new System.Drawing.Point(47, 465);
             this.count.Name = "count";
-            this.count.Size = new System.Drawing.Size(147, 46);
+            this.count.Size = new System.Drawing.Size(180, 46);
             this.count.TabIndex = 26;
             this.count.Text = "Порахувати";
             this.count.UseVisualStyleBackColor = false;
@@ -129,7 +174,7 @@ namespace Currency_Calculator
             "USD",
             "EUR",
             "BTC"});
-            this.choose1.Location = new System.Drawing.Point(141, 332);
+            this.choose1.Location = new System.Drawing.Point(12, 339);
             this.choose1.Name = "choose1";
             this.choose1.Size = new System.Drawing.Size(92, 32);
             this.choose1.TabIndex = 18;
@@ -144,7 +189,7 @@ namespace Currency_Calculator
             "USD",
             "EUR",
             "BTC"});
-            this.choose2.Location = new System.Drawing.Point(327, 332);
+            this.choose2.Location = new System.Drawing.Point(170, 339);
             this.choose2.Name = "choose2";
             this.choose2.Size = new System.Drawing.Size(92, 32);
             this.choose2.TabIndex = 20;
@@ -153,7 +198,7 @@ namespace Currency_Calculator
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = global::Currency_Calculator.Properties.Resources.directions;
-            this.pictureBox1.Location = new System.Drawing.Point(265, 332);
+            this.pictureBox1.Location = new System.Drawing.Point(123, 341);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -186,7 +231,7 @@ namespace Currency_Calculator
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(209)))), ((int)(((byte)(109)))));
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(252)))), ((int)(((byte)(174)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(0, 182);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -201,7 +246,7 @@ namespace Currency_Calculator
             this.choose.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.choose.AutoSize = true;
             this.choose.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.choose.Location = new System.Drawing.Point(226, 288);
+            this.choose.Location = new System.Drawing.Point(230, 297);
             this.choose.Name = "choose";
             this.choose.Size = new System.Drawing.Size(112, 24);
             this.choose.TabIndex = 19;
@@ -285,10 +330,11 @@ namespace Currency_Calculator
             this.ClientSize = new System.Drawing.Size(555, 535);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(571, 574);
             this.Name = "CurrencyCalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CurrencyCalculator";
+            this.Text = "Currency Converter";
             this.Load += new System.EventHandler(this.CurrencyCalculator_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -315,5 +361,8 @@ namespace Currency_Calculator
         private System.Windows.Forms.Button count;
         private System.Windows.Forms.Label mainHeader;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox sum3;
     }
 }

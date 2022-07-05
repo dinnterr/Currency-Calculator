@@ -26,7 +26,9 @@ namespace Currency_Calculator
             sum1.Text = "Введіть суму (в форматі 0.00)";
             sum1.ForeColor = Color.Gray;
             sum2.Text = "0.00";
-            sum2.ForeColor = Color.Gray;
+            sum2.ForeColor = Color.Black;
+            sum3.Text = "0.00";
+            sum3.ForeColor = Color.Black;
         }
 
 
@@ -83,32 +85,47 @@ namespace Currency_Calculator
 
         private async void count_Click(object sender, EventArgs e)
         {
-            NumberFormatInfo numberFormatInfo = new NumberFormatInfo()
-            {
-                NumberDecimalSeparator = ".",
+            const int USD = 0;
+            const int EUR = 1;
+            const int BTC = 2;
 
-            };
-
-            string url = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
-
-            HttpClient httpClient = new HttpClient();
-
-            double sum = 0;
-            double currency = 0;
-            //double result;
+            HttpClient client = new HttpClient();
             try
             {
-                var httpResponseMessage = await httpClient.GetAsync(url);
-                string jsonResponse = await httpResponseMessage.Content.ReadAsStringAsync();
+                NumberFormatInfo numberFormatInfo = new NumberFormatInfo()
+                {
+                    NumberDecimalSeparator = ".",
+                };
 
-                var currencies = JsonConvert.DeserializeObject<Currency[]>(jsonResponse);
-
-                sum = Convert.ToDouble(sum1.Text);
-
+                string responce = await client.GetStringAsync("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5");
+                List<Currency> currencies = JsonConvert.DeserializeObject<List<Currency>>(responce);
                 
-                //проба
-                currency = Convert.ToDouble(currencies[0].Купівля, numberFormatInfo);
-                sum2.Text = Convert.ToString(sum*currency);
+                double sum = Convert.ToDouble(sum1.Text);
+
+                if(sum < 0)
+                {
+                    throw new Exception("Сума не може бути від`ємна.");
+                }
+
+                if (choose1.Text != "" && choose2.Text != "")
+                {
+                    string currency1 = choose1.Text;
+                    string currency2 = choose2.Text;
+                    double usd = Convert.ToDouble(currencies[USD].Купівля, numberFormatInfo);
+                    double uah = 1;
+                    double eur = Convert.ToDouble(currencies[EUR].Купівля, numberFormatInfo);
+                    double btc = Convert.ToDouble(currencies[BTC].Купівля, numberFormatInfo);
+                    double usdSale = Convert.ToDouble(currencies[USD].Продаж, numberFormatInfo);
+                    double eurSale = Convert.ToDouble(currencies[EUR].Продаж, numberFormatInfo);
+                    double btcSale = Convert.ToDouble(currencies[BTC].Продаж, numberFormatInfo);
+
+                    Money money = new Money(currency1, currency2, sum, usd, uah, eur, btc, usdSale, eurSale, btcSale);
+
+                    double result = money.Transfer();
+                    sum2.Text = Convert.ToString(result);
+                }
+                else
+                    throw new Exception("Оберіть валюти для конвертації.");
             }
             catch (Exception ex)
             {
@@ -116,10 +133,8 @@ namespace Currency_Calculator
             }
             finally
             {
-                httpClient.Dispose();
-            }
-            
-           
+                client.Dispose();
+            }  
         }
         
         private void CurrencyCalculator_Load(object sender, EventArgs e)
@@ -127,6 +142,8 @@ namespace Currency_Calculator
             ClientSize = new Size(571, 574);
             FormBorderStyle = FormBorderStyle.FixedSingle;
         }
+
+     
     }
 }
 
