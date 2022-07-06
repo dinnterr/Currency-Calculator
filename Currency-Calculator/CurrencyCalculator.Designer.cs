@@ -32,6 +32,14 @@ namespace Currency_Calculator
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CurrencyCalculator));
             this.panel1 = new System.Windows.Forms.Panel();
             this.privatBank = new System.Windows.Forms.GroupBox();
+            this.NBU = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.nbuusd = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.nbueur = new System.Windows.Forms.TextBox();
             this.sale = new System.Windows.Forms.Label();
             this.buy = new System.Windows.Forms.Label();
             this.btcsale = new System.Windows.Forms.TextBox();
@@ -56,24 +64,16 @@ namespace Currency_Calculator
             this.choose2 = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bank = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.choose = new System.Windows.Forms.Label();
             this.currencyHead = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.mainHeader = new System.Windows.Forms.Label();
-            this.NBU = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.nbuusd = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.nbueur = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.privatBank.SuspendLayout();
+            this.NBU.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.NBU.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -124,6 +124,89 @@ namespace Currency_Calculator
             this.privatBank.Size = new System.Drawing.Size(555, 171);
             this.privatBank.TabIndex = 43;
             this.privatBank.TabStop = false;
+            // 
+            // NBU
+            // 
+            this.NBU.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.NBU.Controls.Add(this.label6);
+            this.NBU.Controls.Add(this.nbuusd);
+            this.NBU.Controls.Add(this.label8);
+            this.NBU.Controls.Add(this.label10);
+            this.NBU.Controls.Add(this.label11);
+            this.NBU.Controls.Add(this.label12);
+            this.NBU.Controls.Add(this.nbueur);
+            this.NBU.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NBU.Location = new System.Drawing.Point(0, 34);
+            this.NBU.Name = "NBU";
+            this.NBU.Size = new System.Drawing.Size(555, 137);
+            this.NBU.TabIndex = 44;
+            this.NBU.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(385, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 25);
+            this.label6.TabIndex = 50;
+            this.label6.Text = "для UAH";
+            // 
+            // nbuusd
+            // 
+            this.nbuusd.Location = new System.Drawing.Point(343, 89);
+            this.nbuusd.Name = "nbuusd";
+            this.nbuusd.ReadOnly = true;
+            this.nbuusd.Size = new System.Drawing.Size(163, 35);
+            this.nbuusd.TabIndex = 45;
+            this.nbuusd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label8.Location = new System.Drawing.Point(135, 96);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 28);
+            this.label8.TabIndex = 43;
+            this.label8.Text = "UAH";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(58, 96);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 28);
+            this.label10.TabIndex = 39;
+            this.label10.Text = "USD";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.Location = new System.Drawing.Point(135, 51);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 28);
+            this.label11.TabIndex = 38;
+            this.label11.Text = "UAH";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(58, 51);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 28);
+            this.label12.TabIndex = 37;
+            this.label12.Text = "EUR";
+            // 
+            // nbueur
+            // 
+            this.nbueur.Location = new System.Drawing.Point(343, 48);
+            this.nbueur.Name = "nbueur";
+            this.nbueur.ReadOnly = true;
+            this.nbueur.Size = new System.Drawing.Size(163, 35);
+            this.nbueur.TabIndex = 31;
+            this.nbueur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // sale
             // 
@@ -398,25 +481,6 @@ namespace Currency_Calculator
             this.bank.Size = new System.Drawing.Size(121, 26);
             this.bank.TabIndex = 27;
             // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(209)))), ((int)(((byte)(109)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(252)))), ((int)(((byte)(174)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 242);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button1.Size = new System.Drawing.Size(555, 60);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Отримати курс";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // choose
             // 
             this.choose.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -461,88 +525,24 @@ namespace Currency_Calculator
             this.mainHeader.Text = "Калькулятор валют";
             this.mainHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // NBU
+            // button1
             // 
-            this.NBU.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.NBU.Controls.Add(this.label6);
-            this.NBU.Controls.Add(this.nbuusd);
-            this.NBU.Controls.Add(this.label8);
-            this.NBU.Controls.Add(this.label10);
-            this.NBU.Controls.Add(this.label11);
-            this.NBU.Controls.Add(this.label12);
-            this.NBU.Controls.Add(this.nbueur);
-            this.NBU.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NBU.Location = new System.Drawing.Point(3, 28);
-            this.NBU.Name = "NBU";
-            this.NBU.Size = new System.Drawing.Size(555, 137);
-            this.NBU.TabIndex = 44;
-            this.NBU.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(385, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 25);
-            this.label6.TabIndex = 50;
-            this.label6.Text = "для UAH";
-            // 
-            // nbuusd
-            // 
-            this.nbuusd.Location = new System.Drawing.Point(343, 89);
-            this.nbuusd.Name = "nbuusd";
-            this.nbuusd.ReadOnly = true;
-            this.nbuusd.Size = new System.Drawing.Size(163, 35);
-            this.nbuusd.TabIndex = 45;
-            this.nbuusd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(135, 96);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 28);
-            this.label8.TabIndex = 43;
-            this.label8.Text = "UAH";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(58, 96);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 28);
-            this.label10.TabIndex = 39;
-            this.label10.Text = "USD";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(135, 51);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 28);
-            this.label11.TabIndex = 38;
-            this.label11.Text = "UAH";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(58, 51);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 28);
-            this.label12.TabIndex = 37;
-            this.label12.Text = "EUR";
-            // 
-            // nbueur
-            // 
-            this.nbueur.Location = new System.Drawing.Point(343, 48);
-            this.nbueur.Name = "nbueur";
-            this.nbueur.ReadOnly = true;
-            this.nbueur.Size = new System.Drawing.Size(163, 35);
-            this.nbueur.TabIndex = 31;
-            this.nbueur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(209)))), ((int)(((byte)(109)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(252)))), ((int)(((byte)(174)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 242);
+            this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button1.Size = new System.Drawing.Size(555, 60);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Отримати курс";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CurrencyCalculator
             // 
@@ -561,10 +561,10 @@ namespace Currency_Calculator
             this.panel1.PerformLayout();
             this.privatBank.ResumeLayout(false);
             this.privatBank.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.NBU.ResumeLayout(false);
             this.NBU.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
