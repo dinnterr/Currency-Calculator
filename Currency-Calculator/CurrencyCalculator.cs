@@ -21,10 +21,18 @@ namespace Currency_Calculator
             sum3.ForeColor = Color.Black;
             sum2.Text = "0.00";
             sum2.ForeColor = Color.Black;
+            privatBank.Visible = false;
+            NBU.Visible = false;
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
+            const int USD = 0;
+            const int EUR = 1;
+            const int BTC = 2;
+            const int USDnbu = 25;
+            const int EURnbu = 32;
+
             HttpClient client = new HttpClient();
 
             try
@@ -37,16 +45,26 @@ namespace Currency_Calculator
                 {
                     case "НБУ":
                         {
+                            NBU.Visible = true;
+                            privatBank.Visible = false;
                             string responce = await client.GetStringAsync("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json");
                             List<CurrencyNBU> currenciesNBU = JsonConvert.DeserializeObject<List<CurrencyNBU>>(responce);
-                            eurBuy.DataSource = currenciesNBU;
+                            nbuusd.Text = Convert.ToString(currenciesNBU[USDnbu].Курс);
+                            nbueur.Text = Convert.ToString(currenciesNBU[EURnbu].Курс);
                             break;
                         }
                     case "ПриватБанк":
                         {
+                            privatBank.Visible = true;
+                            NBU.Visible = false;
                             string responce = await client.GetStringAsync("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5");
                             List<Currency> currencies = JsonConvert.DeserializeObject<List<Currency>>(responce);
-                            eurBuy.DataSource = currencies;
+                            usdbuy.Text = currencies[USD].Купівля;
+                            usdsale.Text = currencies[USD].Продаж;
+                            eurobuy.Text = currencies[EUR].Купівля;
+                            eurosale.Text = currencies[EUR].Продаж;
+                            btcbuy.Text = currencies[BTC].Купівля;
+                            btcsale.Text = currencies[BTC].Продаж;
                             break;
                         }
                     case "":
@@ -88,7 +106,7 @@ namespace Currency_Calculator
             const int EUR = 1;
             const int BTC = 2;
             const int USDnbu = 25;
-            const int EURnbu = 33;
+            const int EURnbu = 32;
 
             HttpClient client1 = new HttpClient();
             HttpClient client2 = new HttpClient();
