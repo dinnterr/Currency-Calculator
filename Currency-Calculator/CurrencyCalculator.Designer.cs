@@ -31,15 +31,15 @@ namespace Currency_Calculator
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CurrencyCalculator));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.privatBank = new System.Windows.Forms.GroupBox();
             this.NBU = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.perevodnbu = new System.Windows.Forms.Label();
             this.nbuusd = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.uahn2 = new System.Windows.Forms.Label();
+            this.usdn = new System.Windows.Forms.Label();
+            this.uahn = new System.Windows.Forms.Label();
+            this.euron = new System.Windows.Forms.Label();
             this.nbueur = new System.Windows.Forms.TextBox();
+            this.privatBank = new System.Windows.Forms.GroupBox();
             this.sale = new System.Windows.Forms.Label();
             this.buy = new System.Windows.Forms.Label();
             this.btcsale = new System.Windows.Forms.TextBox();
@@ -47,11 +47,11 @@ namespace Currency_Calculator
             this.eurosale = new System.Windows.Forms.TextBox();
             this.btcbuy = new System.Windows.Forms.TextBox();
             this.usdbuy = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.usdp = new System.Windows.Forms.Label();
+            this.uahp2 = new System.Windows.Forms.Label();
             this.btc = new System.Windows.Forms.Label();
             this.usd = new System.Windows.Forms.Label();
-            this.uah = new System.Windows.Forms.Label();
+            this.uahp1 = new System.Windows.Forms.Label();
             this.eur = new System.Windows.Forms.Label();
             this.eurobuy = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@ namespace Currency_Calculator
             this.count = new System.Windows.Forms.Button();
             this.choose1 = new System.Windows.Forms.ComboBox();
             this.choose2 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.inversion = new System.Windows.Forms.PictureBox();
             this.bank = new System.Windows.Forms.ComboBox();
             this.choose = new System.Windows.Forms.Label();
             this.currencyHead = new System.Windows.Forms.Label();
@@ -70,15 +70,16 @@ namespace Currency_Calculator
             this.mainHeader = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.privatBank.SuspendLayout();
             this.NBU.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.privatBank.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inversion)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.NBU);
             this.panel1.Controls.Add(this.privatBank);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -88,7 +89,7 @@ namespace Currency_Calculator
             this.panel1.Controls.Add(this.count);
             this.panel1.Controls.Add(this.choose1);
             this.panel1.Controls.Add(this.choose2);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.inversion);
             this.panel1.Controls.Add(this.bank);
             this.panel1.Controls.Add(this.choose);
             this.panel1.Controls.Add(this.currencyHead);
@@ -100,57 +101,32 @@ namespace Currency_Calculator
             this.panel1.Size = new System.Drawing.Size(555, 535);
             this.panel1.TabIndex = 0;
             // 
-            // privatBank
-            // 
-            this.privatBank.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.privatBank.Controls.Add(this.NBU);
-            this.privatBank.Controls.Add(this.sale);
-            this.privatBank.Controls.Add(this.buy);
-            this.privatBank.Controls.Add(this.btcsale);
-            this.privatBank.Controls.Add(this.usdsale);
-            this.privatBank.Controls.Add(this.eurosale);
-            this.privatBank.Controls.Add(this.btcbuy);
-            this.privatBank.Controls.Add(this.usdbuy);
-            this.privatBank.Controls.Add(this.label4);
-            this.privatBank.Controls.Add(this.label3);
-            this.privatBank.Controls.Add(this.btc);
-            this.privatBank.Controls.Add(this.usd);
-            this.privatBank.Controls.Add(this.uah);
-            this.privatBank.Controls.Add(this.eur);
-            this.privatBank.Controls.Add(this.eurobuy);
-            this.privatBank.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.privatBank.Location = new System.Drawing.Point(0, 65);
-            this.privatBank.Name = "privatBank";
-            this.privatBank.Size = new System.Drawing.Size(555, 171);
-            this.privatBank.TabIndex = 43;
-            this.privatBank.TabStop = false;
-            // 
             // NBU
             // 
             this.NBU.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.NBU.Controls.Add(this.label6);
+            this.NBU.Controls.Add(this.perevodnbu);
             this.NBU.Controls.Add(this.nbuusd);
-            this.NBU.Controls.Add(this.label8);
-            this.NBU.Controls.Add(this.label10);
-            this.NBU.Controls.Add(this.label11);
-            this.NBU.Controls.Add(this.label12);
+            this.NBU.Controls.Add(this.uahn2);
+            this.NBU.Controls.Add(this.usdn);
+            this.NBU.Controls.Add(this.uahn);
+            this.NBU.Controls.Add(this.euron);
             this.NBU.Controls.Add(this.nbueur);
             this.NBU.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NBU.Location = new System.Drawing.Point(0, 34);
+            this.NBU.Location = new System.Drawing.Point(0, 72);
             this.NBU.Name = "NBU";
-            this.NBU.Size = new System.Drawing.Size(555, 137);
+            this.NBU.Size = new System.Drawing.Size(552, 137);
             this.NBU.TabIndex = 44;
             this.NBU.TabStop = false;
             // 
-            // label6
+            // perevodnbu
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(385, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 25);
-            this.label6.TabIndex = 50;
-            this.label6.Text = "для UAH";
+            this.perevodnbu.AutoSize = true;
+            this.perevodnbu.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.perevodnbu.Location = new System.Drawing.Point(385, 18);
+            this.perevodnbu.Name = "perevodnbu";
+            this.perevodnbu.Size = new System.Drawing.Size(92, 25);
+            this.perevodnbu.TabIndex = 50;
+            this.perevodnbu.Text = "для UAH";
             // 
             // nbuusd
             // 
@@ -161,43 +137,43 @@ namespace Currency_Calculator
             this.nbuusd.TabIndex = 45;
             this.nbuusd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label8
+            // uahn2
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(135, 96);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 28);
-            this.label8.TabIndex = 43;
-            this.label8.Text = "UAH";
+            this.uahn2.AutoSize = true;
+            this.uahn2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.uahn2.Location = new System.Drawing.Point(135, 96);
+            this.uahn2.Name = "uahn2";
+            this.uahn2.Size = new System.Drawing.Size(59, 28);
+            this.uahn2.TabIndex = 43;
+            this.uahn2.Text = "UAH";
             // 
-            // label10
+            // usdn
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(58, 96);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 28);
-            this.label10.TabIndex = 39;
-            this.label10.Text = "USD";
+            this.usdn.AutoSize = true;
+            this.usdn.Location = new System.Drawing.Point(58, 96);
+            this.usdn.Name = "usdn";
+            this.usdn.Size = new System.Drawing.Size(56, 28);
+            this.usdn.TabIndex = 39;
+            this.usdn.Text = "USD";
             // 
-            // label11
+            // uahn
             // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(135, 51);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 28);
-            this.label11.TabIndex = 38;
-            this.label11.Text = "UAH";
+            this.uahn.AutoSize = true;
+            this.uahn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.uahn.Location = new System.Drawing.Point(135, 51);
+            this.uahn.Name = "uahn";
+            this.uahn.Size = new System.Drawing.Size(59, 28);
+            this.uahn.TabIndex = 38;
+            this.uahn.Text = "UAH";
             // 
-            // label12
+            // euron
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(58, 51);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 28);
-            this.label12.TabIndex = 37;
-            this.label12.Text = "EUR";
+            this.euron.AutoSize = true;
+            this.euron.Location = new System.Drawing.Point(58, 51);
+            this.euron.Name = "euron";
+            this.euron.Size = new System.Drawing.Size(54, 28);
+            this.euron.TabIndex = 37;
+            this.euron.Text = "EUR";
             // 
             // nbueur
             // 
@@ -207,6 +183,30 @@ namespace Currency_Calculator
             this.nbueur.Size = new System.Drawing.Size(163, 35);
             this.nbueur.TabIndex = 31;
             this.nbueur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // privatBank
+            // 
+            this.privatBank.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.privatBank.Controls.Add(this.sale);
+            this.privatBank.Controls.Add(this.buy);
+            this.privatBank.Controls.Add(this.btcsale);
+            this.privatBank.Controls.Add(this.usdsale);
+            this.privatBank.Controls.Add(this.eurosale);
+            this.privatBank.Controls.Add(this.btcbuy);
+            this.privatBank.Controls.Add(this.usdbuy);
+            this.privatBank.Controls.Add(this.usdp);
+            this.privatBank.Controls.Add(this.uahp2);
+            this.privatBank.Controls.Add(this.btc);
+            this.privatBank.Controls.Add(this.usd);
+            this.privatBank.Controls.Add(this.uahp1);
+            this.privatBank.Controls.Add(this.eur);
+            this.privatBank.Controls.Add(this.eurobuy);
+            this.privatBank.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.privatBank.Location = new System.Drawing.Point(3, 68);
+            this.privatBank.Name = "privatBank";
+            this.privatBank.Size = new System.Drawing.Size(552, 171);
+            this.privatBank.TabIndex = 43;
+            this.privatBank.TabStop = false;
             // 
             // sale
             // 
@@ -273,25 +273,25 @@ namespace Currency_Calculator
             this.usdbuy.TabIndex = 45;
             this.usdbuy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label4
+            // usdp
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(99, 133);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 28);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "USD";
+            this.usdp.AutoSize = true;
+            this.usdp.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.usdp.Location = new System.Drawing.Point(99, 133);
+            this.usdp.Name = "usdp";
+            this.usdp.Size = new System.Drawing.Size(56, 28);
+            this.usdp.TabIndex = 44;
+            this.usdp.Text = "USD";
             // 
-            // label3
+            // uahp2
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(99, 92);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 28);
-            this.label3.TabIndex = 43;
-            this.label3.Text = "UAH";
+            this.uahp2.AutoSize = true;
+            this.uahp2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.uahp2.Location = new System.Drawing.Point(99, 92);
+            this.uahp2.Name = "uahp2";
+            this.uahp2.Size = new System.Drawing.Size(59, 28);
+            this.uahp2.TabIndex = 43;
+            this.uahp2.Text = "UAH";
             // 
             // btc
             // 
@@ -311,15 +311,15 @@ namespace Currency_Calculator
             this.usd.TabIndex = 39;
             this.usd.Text = "USD";
             // 
-            // uah
+            // uahp1
             // 
-            this.uah.AutoSize = true;
-            this.uah.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.uah.Location = new System.Drawing.Point(99, 51);
-            this.uah.Name = "uah";
-            this.uah.Size = new System.Drawing.Size(59, 28);
-            this.uah.TabIndex = 38;
-            this.uah.Text = "UAH";
+            this.uahp1.AutoSize = true;
+            this.uahp1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.uahp1.Location = new System.Drawing.Point(99, 51);
+            this.uahp1.Name = "uahp1";
+            this.uahp1.Size = new System.Drawing.Size(59, 28);
+            this.uahp1.TabIndex = 38;
+            this.uahp1.Text = "UAH";
             // 
             // eur
             // 
@@ -395,7 +395,7 @@ namespace Currency_Calculator
             // 
             this.sum1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.sum1.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sum1.Location = new System.Drawing.Point(12, 377);
+            this.sum1.Location = new System.Drawing.Point(12, 395);
             this.sum1.MaximumSize = new System.Drawing.Size(250, 90);
             this.sum1.Multiline = true;
             this.sum1.Name = "sum1";
@@ -415,7 +415,7 @@ namespace Currency_Calculator
             this.count.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(252)))), ((int)(((byte)(174)))));
             this.count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.count.Font = new System.Drawing.Font("Microsoft PhagsPa", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.count.Location = new System.Drawing.Point(47, 465);
+            this.count.Location = new System.Drawing.Point(47, 477);
             this.count.Name = "count";
             this.count.Size = new System.Drawing.Size(180, 46);
             this.count.TabIndex = 26;
@@ -433,7 +433,7 @@ namespace Currency_Calculator
             "USD",
             "EUR",
             "BTC"});
-            this.choose1.Location = new System.Drawing.Point(12, 339);
+            this.choose1.Location = new System.Drawing.Point(12, 348);
             this.choose1.Name = "choose1";
             this.choose1.Size = new System.Drawing.Size(92, 32);
             this.choose1.TabIndex = 18;
@@ -448,22 +448,22 @@ namespace Currency_Calculator
             "USD",
             "EUR",
             "BTC"});
-            this.choose2.Location = new System.Drawing.Point(170, 339);
+            this.choose2.Location = new System.Drawing.Point(170, 348);
             this.choose2.Name = "choose2";
             this.choose2.Size = new System.Drawing.Size(92, 32);
             this.choose2.TabIndex = 20;
             // 
-            // pictureBox1
+            // inversion
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.Image = global::Currency_Calculator.Properties.Resources.directions;
-            this.pictureBox1.Location = new System.Drawing.Point(123, 341);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.inversion.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inversion.Image = global::Currency_Calculator.Properties.Resources.directions;
+            this.inversion.Location = new System.Drawing.Point(118, 348);
+            this.inversion.Name = "inversion";
+            this.inversion.Size = new System.Drawing.Size(40, 40);
+            this.inversion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.inversion.TabIndex = 25;
+            this.inversion.TabStop = false;
+            this.inversion.Click += new System.EventHandler(this.inversion_Click);
             // 
             // bank
             // 
@@ -517,7 +517,8 @@ namespace Currency_Calculator
             // 
             this.mainHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(115)))), ((int)(((byte)(37)))));
             this.mainHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainHeader.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.mainHeader.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainHeader.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.mainHeader.Location = new System.Drawing.Point(0, 0);
             this.mainHeader.Name = "mainHeader";
             this.mainHeader.Size = new System.Drawing.Size(555, 37);
@@ -559,11 +560,11 @@ namespace Currency_Calculator
             this.Load += new System.EventHandler(this.CurrencyCalculator_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.privatBank.ResumeLayout(false);
-            this.privatBank.PerformLayout();
             this.NBU.ResumeLayout(false);
             this.NBU.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.privatBank.ResumeLayout(false);
+            this.privatBank.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inversion)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -580,7 +581,7 @@ namespace Currency_Calculator
         private System.Windows.Forms.ComboBox choose1;
         private System.Windows.Forms.TextBox sum3;
         private System.Windows.Forms.TextBox sum1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox inversion;
         private System.Windows.Forms.Button count;
         private System.Windows.Forms.Label mainHeader;
         private System.Windows.Forms.ComboBox bank;
@@ -590,11 +591,11 @@ namespace Currency_Calculator
         private System.Windows.Forms.GroupBox privatBank;
         private System.Windows.Forms.Label btc;
         private System.Windows.Forms.Label usd;
-        private System.Windows.Forms.Label uah;
+        private System.Windows.Forms.Label uahp1;
         private System.Windows.Forms.Label eur;
         private System.Windows.Forms.TextBox eurobuy;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label uahp2;
+        private System.Windows.Forms.Label usdp;
         private System.Windows.Forms.TextBox btcbuy;
         private System.Windows.Forms.TextBox usdbuy;
         private System.Windows.Forms.TextBox btcsale;
@@ -603,12 +604,12 @@ namespace Currency_Calculator
         private System.Windows.Forms.Label sale;
         private System.Windows.Forms.Label buy;
         private System.Windows.Forms.GroupBox NBU;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label perevodnbu;
         private System.Windows.Forms.TextBox nbuusd;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label uahn2;
+        private System.Windows.Forms.Label usdn;
+        private System.Windows.Forms.Label uahn;
+        private System.Windows.Forms.Label euron;
         private System.Windows.Forms.TextBox nbueur;
     }
 }

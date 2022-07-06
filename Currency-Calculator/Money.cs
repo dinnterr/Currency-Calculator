@@ -89,7 +89,7 @@ namespace Currency_Calculator
             else if (currency == "BTC" && currency1 == "EUR")
             {
                 double dollar;
-                dollar = eur / usd;
+                dollar = eurSale / usd;
                 actualCurrency = btc / dollar;
             }
             else if (currency == "BTC" && currency1 == "UAH")

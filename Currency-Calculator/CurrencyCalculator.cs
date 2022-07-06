@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Currency_Calculator
@@ -27,11 +28,11 @@ namespace Currency_Calculator
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            const int USD = 0;
-            const int EUR = 1;
-            const int BTC = 2;
-            const int USDnbu = 25;
-            const int EURnbu = 32;
+            int USD = 0;
+            int EUR = 0;
+            int BTC = 0;
+            int USDnbu = 0;
+            int EURnbu = 0;
 
             HttpClient client = new HttpClient();
 
@@ -49,6 +50,17 @@ namespace Currency_Calculator
                             privatBank.Visible = false;
                             string responce = await client.GetStringAsync("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json");
                             List<CurrencyNBU> currenciesNBU = JsonConvert.DeserializeObject<List<CurrencyNBU>>(responce);
+                            for(int i = 0; i < currenciesNBU.Count; i++)
+                            {
+                                if (currenciesNBU[i].Код == "USD")
+                                {
+                                    USDnbu = i;
+                                }
+                                if (currenciesNBU[i].Код == "EUR")
+                                {
+                                    EURnbu = i;
+                                }
+                            }
                             nbuusd.Text = Convert.ToString(currenciesNBU[USDnbu].Курс);
                             nbueur.Text = Convert.ToString(currenciesNBU[EURnbu].Курс);
                             break;
@@ -59,6 +71,21 @@ namespace Currency_Calculator
                             NBU.Visible = false;
                             string responce = await client.GetStringAsync("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5");
                             List<Currency> currencies = JsonConvert.DeserializeObject<List<Currency>>(responce);
+                            for (int i = 0; i < currencies.Count; i++)
+                            {
+                                if (currencies[i].Код == "USD")
+                                {
+                                    USD = i;
+                                }
+                                if (currencies[i].Код == "EUR")
+                                {
+                                    EUR = i;
+                                }
+                                if (currencies[i].Код == "BTC")
+                                {
+                                    BTC = i;
+                                }
+                            }
                             usdbuy.Text = currencies[USD].Купівля;
                             usdsale.Text = currencies[USD].Продаж;
                             eurobuy.Text = currencies[EUR].Купівля;
@@ -102,11 +129,11 @@ namespace Currency_Calculator
 
         private async void count_Click(object sender, EventArgs e)
         {
-            const int USD = 0;
-            const int EUR = 1;
-            const int BTC = 2;
-            const int USDnbu = 25;
-            const int EURnbu = 32;
+            int USD = 0;
+            int EUR = 0;
+            int BTC = 0;
+            int USDnbu = 0;
+            int EURnbu = 0;
 
             HttpClient client1 = new HttpClient();
             HttpClient client2 = new HttpClient();
@@ -119,13 +146,49 @@ namespace Currency_Calculator
 
                 string responce1 = await client1.GetStringAsync("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5");
                 List<Currency> currencies = JsonConvert.DeserializeObject<List<Currency>>(responce1);
+                for (int i = 0; i < currencies.Count; i++)
+                {
+                    if (currencies[i].Код == "USD")
+                    {
+                        USD = i;
+                    }
+                    if (currencies[i].Код == "EUR")
+                    {
+                        EUR = i;
+                    }
+                    if (currencies[i].Код == "BTC")
+                    {
+                        BTC = i;
+                    }
+                }
 
                 string responce2 = await client2.GetStringAsync("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json");
                 List<CurrencyNBU> currenciesNBU = JsonConvert.DeserializeObject<List<CurrencyNBU>>(responce2);
+                for (int i = 0; i < currenciesNBU.Count; i++)
+                {
+                    if (currenciesNBU[i].Код == "USD")
+                    {
+                        USDnbu = i;
+                    }
+                    if (currenciesNBU[i].Код == "EUR")
+                    {
+                        EURnbu = i;
+                    }
+                }
 
-                double sum = Convert.ToDouble(sum1.Text, numberFormatInfo);
+                double sum = 0;
+                string suma = sum1.Text;
+                string pattern = @"[0-9],[0-9]";
+                if (Regex.IsMatch(suma, pattern))
+                {
+                    throw new Exception("Розділювач цілої та дробної частини повинен бути крапкою.");
+                }
+                else
+                {
+                    sum = Convert.ToDouble(sum1.Text, numberFormatInfo);
+                }
 
-                if(sum < 0)
+                if (sum < 0)
                 {
                     throw new Exception("Сума не може бути від`ємна.");
                 }
@@ -183,7 +246,7 @@ namespace Currency_Calculator
             FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void inversion_Click(object sender, EventArgs e)
         {
             string first = choose1.Text;
             choose1.Text = choose2.Text;
