@@ -15,7 +15,8 @@ namespace Currency_Calculator
         private double actualCurrency;
         private string currency;
         private string currency1;
-        public Money(string currency, string currency1, double sum, double usd, double uah, double eur, double btc, double usdSale, double eurSale, double btcSale)
+        public Money(string currency, string currency1, double sum, double usd, 
+            double uah, double eur, double btc, double usdSale, double eurSale, double btcSale)
         {
             this.currency = currency;
             this.currency1 = currency1;

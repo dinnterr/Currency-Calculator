@@ -2,7 +2,7 @@
 
 namespace Currency_Calculator
 {
-    
+    //НБУ
     public class CurrencyNBU
     {
         [JsonProperty("r030")]

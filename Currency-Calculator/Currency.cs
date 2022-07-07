@@ -2,7 +2,7 @@
 
 namespace Currency_Calculator
 {
- 
+    //ПриватБанк
     public class Currency
     {
         [JsonProperty("ccy")]
